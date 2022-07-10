@@ -1,0 +1,31 @@
+<!--
+ * @Author: 李家用 lijiayong@rp-pet.cn
+ * @Date: 2022-07-09 16:20:25
+ * @LastEditors: 李家用 lijiayong@rp-pet.cn
+ * @LastEditTime: 2022-07-09 16:35:16
+ * @FilePath: /core/example/reactive.html
+ * @Description: 通过网页调试源码
+-->
+
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>网页调试响应系统</title></title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript" src="../packages/reactivity/dist/reactivity.global.js"></script>
+    <script type="text/javascript">
+        const {reactive, effect, ref, toRef, readonly} = VueReactivity
+        let obj = {name: 'ljy'}
+        let proxy1 = readonly(obj)
+        debugger
+        let proxy2 = reactive(proxy1)
+        console.log(proxy1 === proxy2)
+    </script>
+  </body>
+</html>
